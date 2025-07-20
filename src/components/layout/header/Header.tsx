@@ -1,9 +1,11 @@
 "use client"
 
 import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 
 
@@ -11,6 +13,16 @@ import { usePathname } from "next/navigation";
 
 export function Header() {
     const pathname = usePathname();
+    const [menuOpen, setMenuOpen] = useState<Boolean>(true);
+
+    const navLinks = [
+        { href: "/", label: "Inicio" },
+        { href: "/servicos", label: "Serviços" },
+        { href: "/portifolio", label: "portifolio" },
+        { href: "/sobre", label: "Sobre" },
+        { href: "/contacto", label: "Contacto" },
+    ]
+
 
     return (
         <header className="sticky py-3 px-2 lg:px-[100px] top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -37,7 +49,30 @@ export function Header() {
                     </Link>
                 </nav>
 
-                <Button asChild className="">
+                <Button className="md:hidden text-muted-foreground" onClick={() => setMenuOpen(!menuOpen)}>
+                    {menuOpen ? <X size={28} /> : <Menu color="#fff" size={28} />}
+                </Button>
+                {/* Menu Mobile */}
+                {menuOpen && (
+                    <div className="md:hidden bg-background px-4 py-3 h-[100vh] bg-gray-900 text-white space-y-4 border-t absolute start-0 top-22 ">
+                        {navLinks.map(({ href, label }) => (
+                            <Link
+                                key={href}
+                                href={href}
+                                onClick={() => setMenuOpen(false)}
+                                className={`block w-50 text-muted font-medium ${pathname === href ? "text-primary" :
+                                    "text-muted-foreground"} transition-colors hover:text-primary`}
+
+                            >
+                                {label}
+                            </Link>
+                        ))
+
+                        }
+                    </div>
+                )
+                }
+                <Button asChild className="hidden md:block">
                     <Link href="/contato">Orçamento</Link>
                 </Button>
             </div>
