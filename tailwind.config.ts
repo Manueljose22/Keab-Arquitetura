@@ -12,11 +12,9 @@ const config: Config = {
         primary: {
           DEFAULT: '#002F59',
           light: '#2A6381',
-          // dark: '#5E3A1D',
+          red: '#FC3B3C',
         },
-        text: {
-          redText: '#FC3B3C',
-        }
+        
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
