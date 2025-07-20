@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google'
 import "../styles/globals.css";
+import { Header } from "@/components/layout/header/Header";
+import { Footer } from "@/components/layout/footer/Footer";
 
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
     "obras residenciais",
     "empresa de construção em Angola"
   ],
-  metadataBase: new URL("https://keab-arquitetura.netlify.app"), 
+  metadataBase: new URL("https://keab-arquitetura.netlify.app"),
   authors: [{ name: "Keab", url: "https://keab-arquitetura.netlify.app" }],
   creator: "Keab",
   robots: "index, follow",
@@ -59,9 +61,11 @@ export default function RootLayout({
       <body
         className={inter.className}
       >
+        <Header />
         <div className="min-h-screen bg-background text-foreground">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );

@@ -16,10 +16,9 @@ import { projects, services } from '@/constants/constants';
 export default function Home() {
   return (
     <>
-      <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative h-[80vh] flex items-center justify-center">
+        <section className="relative h-[90vh] flex items-center justify-center">
           <div className="absolute inset-0 bg-black/50 z-10" />
           <Image
             src="/images/hero-bg.jpg"
@@ -28,7 +27,7 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="container relative z-20 text-center text-white px-4">
+          <div className="container relative z-20 text-center text-white px-2">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">Construindo Sonhos, Criando Realidades</h1>
             <p className="text-xl md:text-2xl mb-8">Excelência em arquitetura e construção civil</p>
             <Button color='#FC3B3C' size="lg" className="text-lg cursor-pointer">Solicite um Orçamento</Button>
@@ -145,7 +144,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
