@@ -97,11 +97,11 @@ export default function Home() {
             </div>
             <div className="lg:w-1/1">
               <h2 className="text-3xl font-bold mb-6">Sobre Nossa Empresa</h2>
-              <p className="text-gray-600 mb-4 lg:w-3xl text-justify">
+              <p className="text-gray-600 mb-4 lg:w-3xl ">
                 Fundada em 2020, nossa empresa se destaca pela excelência em projetos arquitetônicos e construção civil.
                 Combinamos criatividade, funcionalidade e técnicas construtivas avançadas para entregar resultados excepcionais.
               </p>
-              <p className="text-gray-600 mb-6 lg:w-3xl text-justify">
+              <p className="text-gray-600 mb-6 lg:w-3xl ">
                 Nossa equipe multidisciplinar é formada por arquitetos, engenheiros e profissionais altamente qualificados,
                 comprometidos em superar as expectativas de nossos clientes.
               </p>
