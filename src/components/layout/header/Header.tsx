@@ -13,7 +13,7 @@ import { useState } from "react";
 
 export function Header() {
     const pathname = usePathname();
-    const [menuOpen, setMenuOpen] = useState<Boolean>(true);
+    const [menuOpen, setMenuOpen] = useState<Boolean>(false);
 
     const navLinks = [
         { href: "/", label: "Inicio" },
@@ -54,7 +54,7 @@ export function Header() {
                 </Button>
                 {/* Menu Mobile */}
                 {menuOpen && (
-                    <div className="md:hidden bg-background px-4 py-3 h-[100vh] bg-gray-900 text-white space-y-4 border-t absolute start-0 top-22 ">
+                    <div className="md:hidden bg-background px-4 py-3 h-[100vh] bg-gray-900 text-white space-y-4 border-t absolute start-0 top-22 z-40 transform transition-transform duration-300 ease-in-out">
                         {navLinks.map(({ href, label }) => (
                             <Link
                                 key={href}
